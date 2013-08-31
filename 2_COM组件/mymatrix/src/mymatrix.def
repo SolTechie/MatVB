@@ -1,0 +1,7 @@
+LIBRARY mymatrix_1_0.dll
+DESCRIPTION 'mymatrix'
+EXPORTS
+    DllGetClassObject @2 PRIVATE
+    DllCanUnloadNow @3 PRIVATE
+    DllRegisterServer @4 PRIVATE
+    DllUnregisterServer @5 PRIVATE

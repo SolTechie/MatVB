@@ -1,0 +1,49 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "mwcomtypes.idl";
+
+[
+    object,
+    uuid("CF135276-2276-4C0D-953E-FAEB04CB6B1C"),
+    dual,
+    helpstring("Imydatafit Interface"),
+    pointer_default(unique)
+]
+interface Imydatafit : IDispatch
+{
+    [propget, id(1), helpstring("property MWFlags")]
+    HRESULT MWFlags([out, retval] IMWFlags** ppvFlags);
+    [propput, id(1), helpstring("property MWFlags")]
+    HRESULT MWFlags([in] IMWFlags* pvFlags);
+    
+    [id(2), helpstring("Method conv2num")]
+    HRESULT conv2num([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(3), helpstring("Method conv2str")]
+    HRESULT conv2str([in] long nargout, [in,out] VARIANT* y,
+                     [in,out] VARIANT* n, [in] VARIANT x);
+
+    [id(4), helpstring("Method mypolyfit")]
+    HRESULT mypolyfit([in] long nargout, [in,out] VARIANT* z,
+                      [in] VARIANT x, [in] VARIANT y, [in] VARIANT n);
+};
+[
+    uuid("92BC9978-A6C3-4C14-BCA4-A120BF4042EA"),
+    version(1.0),
+    helpstring("mydatafit 1.0 Type Library")
+]
+library mydatafit
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    importlib("mwcomutil.tlb");
+    
+    [
+        uuid("7143C8D8-EA3A-4AC6-8CC6-3A5CDE3EB92A"),
+        helpstring("mydatafit Class")
+    ]
+    coclass mydatafit
+    {
+        [default] interface Imydatafit;
+    };
+};

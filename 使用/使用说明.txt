@@ -1,0 +1,7 @@
+1、分别运行mymatrix.exe mydatafit.exe mywav.exe，注意选择一个没有空格，不带汉字的路径
+
+2、将刚产生的[自己选的路径]/bin/win32文件夹设为系统环境变量（右键我的电脑--系统--高级--环境变量--新建（系统环境变量））path=[自己选的路径]/bin/win32
+
+3、运行diamond.exe
+
+注：如果进入不了处理波形声音，提示"comdlg32.ocx"的错误，则在“开始--运行”中用regsvr32 [当前路径]/comdlg32.ocx

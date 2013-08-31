@@ -1,0 +1,18 @@
+Building standalone executable...
+mcc -M -silentsetup -d 'C:/MATLAB6p5/work/mydatafit/src'  -B 'csglcom:mydatafit,mydatafit,1.0'  -i C:/MATLAB6p5/work/conv2num.m C:/MATLAB6p5/work/conv2str.m C:/MATLAB6p5/work/mypolyfit.m   
+mydatafit_idl.idl 
+oaidl.idl 
+objidl.idl 
+unknwn.idl 
+wtypes.idl 
+ocidl.idl 
+oleidl.idl 
+servprov.idl 
+urlmon.idl 
+msxml.idl 
+mwcomtypes.idl 
+
+Creating distrib directory.
+Moving files to distrib.
+
+Standalone DLL build complete.

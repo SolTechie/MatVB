@@ -1,0 +1,18 @@
+Building standalone executable...
+mcc -M -silentsetup -d 'C:/MATLAB6p5/work/mymatrix/src'  -B 'ccom:mymatrix,mymatrix,1.0'  -i C:/MATLAB6p5/work/conv2fraction.m C:/MATLAB6p5/work/conv2num.m C:/MATLAB6p5/work/conv2str.m C:/MATLAB6p5/work/GuassSeidel.m C:/MATLAB6p5/work/myeye.m C:/MATLAB6p5/work/mymagic.m C:/MATLAB6p5/work/myminus.m C:/MATLAB6p5/work/mymultiply.m C:/MATLAB6p5/work/mypascal.m C:/MATLAB6p5/work/myplus.m C:/MATLAB6p5/work/myrot.m C:/MATLAB6p5/work/mysolve.m   
+mymatrix_idl.idl 
+oaidl.idl 
+objidl.idl 
+unknwn.idl 
+wtypes.idl 
+ocidl.idl 
+oleidl.idl 
+servprov.idl 
+urlmon.idl 
+msxml.idl 
+mwcomtypes.idl 
+
+Creating distrib directory.
+Moving files to distrib.
+
+Standalone DLL build complete.

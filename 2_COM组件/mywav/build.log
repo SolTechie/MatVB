@@ -1,0 +1,18 @@
+Building standalone executable...
+mcc -M -silentsetup -d 'C:/MATLAB6p5/work/mywav/src'  -B 'csglcom:mywav,mywav,1.0'  -i C:/MATLAB6p5/work/fzone.m C:/MATLAB6p5/work/myprowav.m C:/MATLAB6p5/work/tzone.m   
+mywav_idl.idl 
+oaidl.idl 
+objidl.idl 
+unknwn.idl 
+wtypes.idl 
+ocidl.idl 
+oleidl.idl 
+servprov.idl 
+urlmon.idl 
+msxml.idl 
+mwcomtypes.idl 
+
+Creating distrib directory.
+Moving files to distrib.
+
+Standalone DLL build complete.

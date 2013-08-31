@@ -1,0 +1,82 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "mwcomtypes.idl";
+
+[
+    object,
+    uuid("AF0791E3-1D83-4AA1-9005-0E7F293913C6"),
+    dual,
+    helpstring("Imymatrix Interface"),
+    pointer_default(unique)
+]
+interface Imymatrix : IDispatch
+{
+    [propget, id(1), helpstring("property MWFlags")]
+    HRESULT MWFlags([out, retval] IMWFlags** ppvFlags);
+    [propput, id(1), helpstring("property MWFlags")]
+    HRESULT MWFlags([in] IMWFlags* pvFlags);
+    
+    [id(2), helpstring("Method conv2fraction")]
+    HRESULT conv2fraction([in] long nargout,
+                          [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(3), helpstring("Method conv2num")]
+    HRESULT conv2num([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(4), helpstring("Method conv2str")]
+    HRESULT conv2str([in] long nargout, [in,out] VARIANT* y,
+                     [in,out] VARIANT* n, [in] VARIANT x);
+
+    [id(5), helpstring("Method guassseidel")]
+    HRESULT guassseidel([in] long nargout, [in,out] VARIANT* x,
+                        [in,out] VARIANT* cnt, [in] VARIANT A,
+                        [in] VARIANT b, [in] VARIANT e);
+
+    [id(6), helpstring("Method myeye")]
+    HRESULT myeye([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(7), helpstring("Method mymagic")]
+    HRESULT mymagic([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(8), helpstring("Method myminus")]
+    HRESULT myminus([in] long nargout, [in,out] VARIANT* y,
+                    [in] VARIANT a, [in] VARIANT b);
+
+    [id(9), helpstring("Method mymultiply")]
+    HRESULT mymultiply([in] long nargout, [in,out] VARIANT* y,
+                       [in] VARIANT a, [in] VARIANT b);
+
+    [id(10), helpstring("Method mypascal")]
+    HRESULT mypascal([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(11), helpstring("Method myplus")]
+    HRESULT myplus([in] long nargout, [in,out] VARIANT* y,
+                   [in] VARIANT a, [in] VARIANT b);
+
+    [id(12), helpstring("Method myrot")]
+    HRESULT myrot([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(13), helpstring("Method mysolve")]
+    HRESULT mysolve([in] long nargout, [in,out] VARIANT* y,
+                    [in] VARIANT a, [in] VARIANT b);
+};
+[
+    uuid("208EE527-C468-46DF-BE75-FC9A4207B4E2"),
+    version(1.0),
+    helpstring("mymatrix 1.0 Type Library")
+]
+library mymatrix
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    importlib("mwcomutil.tlb");
+    
+    [
+        uuid("E6FB83CF-05E0-4ADD-A1EB-1F66034313DF"),
+        helpstring("mymatrix Class")
+    ]
+    coclass mymatrix
+    {
+        [default] interface Imymatrix;
+    };
+};

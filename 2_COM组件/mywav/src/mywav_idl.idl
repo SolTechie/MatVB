@@ -1,0 +1,48 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "mwcomtypes.idl";
+
+[
+    object,
+    uuid("42F76964-ECDA-4680-841E-28EB923B45F1"),
+    dual,
+    helpstring("Imywav Interface"),
+    pointer_default(unique)
+]
+interface Imywav : IDispatch
+{
+    [propget, id(1), helpstring("property MWFlags")]
+    HRESULT MWFlags([out, retval] IMWFlags** ppvFlags);
+    [propput, id(1), helpstring("property MWFlags")]
+    HRESULT MWFlags([in] IMWFlags* pvFlags);
+    
+    [id(2), helpstring("Method fzone")]
+    HRESULT fzone([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+
+    [id(3), helpstring("Method myprowav")]
+    HRESULT myprowav([in] long nargout, [in,out] VARIANT* y, [in] VARIANT opn,
+                     [in] VARIANT sav, [in] VARIANT spd, [in] VARIANT awg);
+
+    [id(4), helpstring("Method tzone")]
+    HRESULT tzone([in] long nargout, [in,out] VARIANT* y, [in] VARIANT x);
+};
+[
+    uuid("7C4A4DAE-9B47-4C26-8AF3-095D94A97748"),
+    version(1.0),
+    helpstring("mywav 1.0 Type Library")
+]
+library mywav
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    importlib("mwcomutil.tlb");
+    
+    [
+        uuid("386F0C0A-26E5-4B8B-98AF-F2D10BF4040E"),
+        helpstring("mywav Class")
+    ]
+    coclass mywav
+    {
+        [default] interface Imywav;
+    };
+};
